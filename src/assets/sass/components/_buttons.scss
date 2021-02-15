@@ -1,0 +1,31 @@
+.button {
+	width: 165px;
+	height: 50px;
+	background: #aa9fc1;
+	border-radius: 2px;
+	border: 0;
+	color: white;
+	font-family: 'roboto', sans-serif;
+	transition: 0.3s all ease-in;
+	cursor: pointer;
+
+	@media screen and (min-width: 768px) {
+		display: block;
+		margin: 0 auto;
+	}
+
+	&:not(:disabled):hover {
+		padding-left: 18px;
+		background-color: #008b8b;
+	}
+
+	&:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+	}
+
+	&__icon {
+		margin-left: var(--base-spacing-unit);
+		vertical-align: middle;
+	}
+}

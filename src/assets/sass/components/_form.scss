@@ -1,0 +1,85 @@
+form {
+	max-width: 600px;
+	margin: 0 auto;
+
+	.form-row {
+		display: flex;
+		flex-direction: column;
+
+		@media screen and (min-width: 768px) {
+			flex-direction: row;
+		}
+
+		&__element {
+			position: relative;
+			margin-bottom: var(--base-spacing-unit);
+
+			@media screen and (min-width: 768px) {
+				flex: 1;
+				margin-right: var(--base-spacing-unit);
+
+				&:last-of-type {
+					margin-right: 0;
+					margin-bottom: 0;
+				}
+			}
+
+			&-icon {
+				position: absolute;
+				visibility: hidden;
+				top: 10px;
+				right: 10px;
+				width: 20px;
+				height: 20px;
+				background-repeat: no-repeat;
+			}
+
+			&.error {
+				input,
+				textarea {
+					border: 2px solid var(--error-colour);
+				}
+
+				.form-row__element-icon {
+					visibility: visible;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23ff0000;%7D%3C/style%3E%3C/defs%3E%3Ctitle/%3E%3Cg data-name='Layer 57' id='Layer_57'%3E%3Cpath class='cls-1' d='M16,31A15,15,0,1,1,31,16,15,15,0,0,1,16,31ZM16,3A13,13,0,1,0,29,16,13,13,0,0,0,16,3Z'/%3E%3Cpath class='cls-1' d='M16,24a2,2,0,1,1,2-2A2,2,0,0,1,16,24Zm0-2Z'/%3E%3Cpath class='cls-1' d='M16,18a1,1,0,0,1-1-1V8a1,1,0,0,1,2,0v9A1,1,0,0,1,16,18Z'/%3E%3C/g%3E%3C/svg%3E");
+				}
+			}
+			&.success {
+				input,
+				textarea {
+					border: 2px solid var(--success-colour);
+				}
+
+				.form-row__element-icon {
+					visibility: visible;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' enable-background='new 0 0 52 52' height='32' id='Layer_1' version='1.1' viewBox='0 0 880 880' width='32' xml:space='preserve'%3E%3Cpath d='M256,6.998c-137.533,0-249,111.467-249,249c0,137.534,111.467,249,249,249s249-111.467,249-249 C505,118.464,393.533,6.998,256,6.998z M256,485.078c-126.309,0-229.08-102.771-229.08-229.081 c0-126.31,102.771-229.08,229.08-229.08c126.31,0,229.08,102.771,229.08,229.08C485.08,382.307,382.31,485.078,256,485.078z' fill='%2318a918'/%3E%3Cpolygon fill='%2318a918' points='384.235,158.192 216.919,325.518 127.862,236.481 113.72,250.624 216.919,353.803 398.28,172.334 '/%3E%3C/svg%3E");
+				}
+			}
+
+			input,
+			textarea {
+				width: 100%;
+				box-sizing: border-box;
+				height: 40px;
+				font-family: 'Roboto Mono', sans-serif;
+				text-indent: 5px;
+				background-color: #fafafe;
+				border: 1px solid#f0f0fc;
+				border-radius: 2px;
+
+				&:focus {
+					border: none;
+				}
+			}
+
+			textarea {
+				height: 140px;
+			}
+		}
+	}
+
+	.error-message {
+		color: var(--error-colour);
+	}
+}

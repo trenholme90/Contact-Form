@@ -1,0 +1,42 @@
+:root {
+	--darkest-colour: hsl(0, 0%, 13%);
+	--accent-colour: #777777;
+	--accent-light-colour: #6c6a6a;
+	--accent-lightest-colour: #f3f1f3;
+	--success-colour: #18a918;
+	--error-colour: #ff0000;
+
+	font-size: 100%;
+
+	--base-spacing-unit: 12px;
+	--double-spacing-unit: 24px;
+}
+
+body {
+	font-family: 'roboto', sans-serif;
+	background-color: var(--accent-lightest-colour);
+	color: var(--accent-colour);
+	margin: 0;
+	line-height: 27px;
+}
+
+header {
+	margin-bottom: var(--double-spacing-unit);
+
+	@media screen and (min-width: 768px) {
+		text-align: center;
+	}
+}
+
+main {
+	width: 100%;
+}
+
+h1 {
+	font-family: 'Inter', sans-serif;
+	color: var(--darkest-colour);
+}
+
+p {
+	margin: 0;
+}
